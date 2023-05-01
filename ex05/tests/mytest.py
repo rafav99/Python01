@@ -1,0 +1,15 @@
+from the_bank import Account, Bank
+my_account = Account('cuenta_1', titular='Rafael', zip='joven')
+second_account = Account('cuenta_2', titular='Rafael', zip='joven')
+newbank = Bank()
+newbank.add(my_account)
+newbank.add(second_account)
+print(my_account.__dict__)
+print(second_account.__dict__)
+
+my_account.transfer(1000)
+print("valor de mi cuenta", my_account.value)
+print("valor de la cuenta secundaria", second_account.value)
+print(newbank.transfer('cuenta_1', 'cuenta_2', 100))
+print("valor de mi cuenta", my_account.value)
+print("valor de la cuenta secundaria", second_account.value)
